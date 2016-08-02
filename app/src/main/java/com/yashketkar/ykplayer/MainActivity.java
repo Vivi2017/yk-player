@@ -11,11 +11,17 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NotificationCompat;
+import android.view.View;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,31 +31,21 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class MainActivity extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks, VideosFragment.OnFragmentInteractionListener, TorrentsFragment.OnFragmentInteractionListener, LiveTVFragment.OnFragmentInteractionListener {
-
-    /**
-     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
-     */
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener,VideosFragment.OnFragmentInteractionListener, TorrentsFragment.OnFragmentInteractionListener, LiveTVFragment.OnFragmentInteractionListener  {
 
     private static final String PREF_USER_LEARNED_TORRENT = "torrent_learned";
-
-    private NavigationDrawerFragment mNavigationDrawerFragment;
-    private Toolbar mToolbar;
 
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
-
-    private InterstitialAd interstitial;
+    private Toolbar mToolbar;
 
     private CharSequence mTitle;
     private String versioncode;
@@ -59,23 +55,30 @@ public class MainActivity extends ActionBarActivity
     private String downloadurl;
     private boolean mUserLearnedTorrents;
 
-
-    public void onVideosFragmentInteraction(String id) {
-        playvideo(id);
-    }
-
-    public void onLiveTVFragmentInteraction(String id) {
-        playvideo(id);
-    }
-
-    public void onTorrentsFragmentInteraction(String id) {
-        playvideo(id);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
         // Get tracker.
         Tracker t = ((AppController) MainActivity.this.getApplication()).getTracker(
@@ -85,48 +88,53 @@ public class MainActivity extends ActionBarActivity
         // Send a screen view.
         t.send(new HitBuilders.AppViewBuilder().build());
 
-        mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
-        // Set up the drawer.
-        mNavigationDrawerFragment.setUp(
-                R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
-
         makeJsonObjectRequest();
-
-        // Create the interstitial.
-        interstitial = new InterstitialAd(this);
-        interstitial.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
-        // Create ad request.
-        AdRequest adRequest = new AdRequest.Builder().build();
-        // Begin loading your interstitial.
-        interstitial.loadAd(adRequest);
     }
 
-    public Toolbar getToolbarRef() {
-        return mToolbar;
-    }
-
-    public void displayInterstitial() {
-        if (interstitial.isLoaded()) {
-            interstitial.show();
-
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
         }
     }
 
     @Override
-    public void onNavigationDrawerItemSelected(int position) {
-        // update the main content by replacing fragments
-        Fragment fragment;
-        switch (position) {
-            case 0:
-                fragment = new VideosFragment().newInstance(position);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+        Fragment fragment = null;
+        switch (id) {
+            case R.id.nav_videos:
+                fragment = new VideosFragment().newInstance();
                 switchfragments(fragment);
                 break;
-            case 1:
-                //fragment = new VideosFragment().newInstance(position);
+            case R.id.nav_network_stream:
                 AlertDialog.Builder nwalert = new AlertDialog.Builder(this);
                 nwalert.setTitle(getString(R.string.nw_alert_title));
                 nwalert.setMessage(getString(R.string.nw_alert_message));
@@ -154,8 +162,8 @@ public class MainActivity extends ActionBarActivity
                         });
                 nwalert.show();
                 break;
-            case 2:
-                fragment = new TorrentsFragment().newInstance(position);
+            case R.id.nav_torrent_stream:
+                fragment = new TorrentsFragment().newInstance();
                 switchfragments(fragment);
                 SharedPreferences sp = this.getSharedPreferences(
                         getString(R.string.preference_file_key), Context.MODE_PRIVATE);
@@ -166,35 +174,64 @@ public class MainActivity extends ActionBarActivity
                     startActivity(intent);
                 }
                 break;
-            case 3:
-                fragment = new LiveTVFragment().newInstance(position);
+            case R.id.nav_live_tv:
+                fragment = new LiveTVFragment().newInstance();
                 switchfragments(fragment);
                 break;
-            case 4:
+            case R.id.nav_share:
                 Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
                 shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.share_message));
                 shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.share_title));
                 startActivity(Intent.createChooser(shareIntent, getString(R.string.share_chooser)));
                 break;
+            case R.id.nav_website:
+
             default:
                 break;
         }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    public void onVideosFragmentInteraction(String id) {
+        playvideo(id);
+    }
+
+    public void onLiveTVFragmentInteraction(String id) {
+        playvideo(id);
+    }
+
+    public void onTorrentsFragmentInteraction(String id) {
+        playvideo(id);
+    }
+
+    public void onSectionAttached(int number) {
+        mTitle = getResources().getStringArray(R.array.nav_drawer_items)[number];
+    }
+
+    public void restoreActionBar() {
+        mToolbar.setTitle(mTitle);
+    }
+
+    public Toolbar getToolbarRef() {
+        return mToolbar;
+    }
+
+    public void playvideo(String id) {
+        //displayInterstitial();
+        Intent intent = new Intent(MainActivity.this,
+                VideoPlayerActivity.class);
+        intent.putExtra("EXTRA_URL", id);
+        startActivity(intent);
     }
 
     public void switchfragments(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, fragment)
+                .replace(R.id.fragment_container, fragment)
                 .commit();
-    }
-
-    public void playvideo(String id) {
-        displayInterstitial();
-        Intent intent = new Intent(MainActivity.this,
-                VideoPlayerActivity.class);
-        intent.putExtra("EXTRA_URL", id);
-        startActivity(intent);
     }
 
     private void makeJsonObjectRequest() {
@@ -274,35 +311,4 @@ public class MainActivity extends ActionBarActivity
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(jsonObjReq);
     }
-
-
-    public void onSectionAttached(int number) {
-        mTitle = getResources().getStringArray(R.array.nav_drawer_items)[number];
-    }
-
-    public void restoreActionBar() {
-        /*
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
-        */
-        mToolbar.setTitle(mTitle);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        if (!mNavigationDrawerFragment.isDrawerOpen()) {
-            // Only show items in the action bar relevant to this screen
-            // if the drawer is not showing. Otherwise, let the drawer
-            // decide what to show in the action bar.
-            getMenuInflater().inflate(R.menu.menu_main, menu);
-            restoreActionBar();
-            return true;
-        }
-        return super.onCreateOptionsMenu(menu);
-    }
-
-
 }

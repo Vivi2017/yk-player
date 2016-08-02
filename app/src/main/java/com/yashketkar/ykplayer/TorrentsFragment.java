@@ -1,7 +1,7 @@
 package com.yashketkar.ykplayer;
 
-import android.app.Activity;
 import android.app.ActivityManager;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -29,8 +29,6 @@ import com.google.android.gms.analytics.Tracker;
  */
 
 public class TorrentsFragment extends Fragment {
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_SECTION_NUMBER = "section_number";
     private ProgressBar tProgressBar;
     private WebView tWebView;
     private OnFragmentInteractionListener mListener;
@@ -42,11 +40,8 @@ public class TorrentsFragment extends Fragment {
      * @return A new instance of fragment YTFragment.
      */
 
-    public static TorrentsFragment newInstance(int sectionNumber) {
+    public static TorrentsFragment newInstance() {
         TorrentsFragment fragment = new TorrentsFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -135,13 +130,12 @@ public class TorrentsFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-            mListener.onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
     }

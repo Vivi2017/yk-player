@@ -1,6 +1,5 @@
 package com.yashketkar.ykplayer;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Build;
@@ -17,7 +16,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -39,8 +37,6 @@ import java.util.List;
  */
 public class LiveTVFragment extends Fragment implements AbsListView.OnItemClickListener {
 
-    private static final String ARG_SECTION_NUMBER = "section_number";
-
     private OnFragmentInteractionListener mListener;
 
     /**
@@ -60,11 +56,8 @@ public class LiveTVFragment extends Fragment implements AbsListView.OnItemClickL
     private ListView listView;
     private LiveTVAdapter adapter;
 
-    public static LiveTVFragment newInstance(int sectionNumber) {
+    public static LiveTVFragment newInstance() {
         LiveTVFragment fragment = new LiveTVFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -180,8 +173,8 @@ public class LiveTVFragment extends Fragment implements AbsListView.OnItemClickL
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        Main2Activity activity = (Main2Activity) getActivity();
-        //activity.getToolbarRef().setBackgroundColor(getResources().getColor(R.color.play_red));
+        MainActivity activity = (MainActivity) getActivity();
+        activity.getToolbarRef().setBackgroundColor(getResources().getColor(R.color.play_red));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = activity.getWindow();

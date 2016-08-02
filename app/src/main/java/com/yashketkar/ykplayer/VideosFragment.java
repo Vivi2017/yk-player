@@ -1,6 +1,5 @@
 package com.yashketkar.ykplayer;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.database.Cursor;
@@ -35,8 +34,6 @@ import com.google.android.gms.analytics.Tracker;
  */
 public class VideosFragment extends Fragment implements AbsListView.OnItemClickListener {
 
-    private static final String ARG_SECTION_NUMBER = "section_number";
-
     private OnFragmentInteractionListener mListener;
 
     /**
@@ -50,12 +47,8 @@ public class VideosFragment extends Fragment implements AbsListView.OnItemClickL
      */
     private ListAdapter mAdapter;
 
-    public static VideosFragment newInstance(int sectionNumber) {
-        VideosFragment fragment = new VideosFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-        fragment.setArguments(args);
-        return fragment;
+    public static VideosFragment newInstance() {
+        return new VideosFragment();
     }
 
     /**
@@ -88,8 +81,8 @@ public class VideosFragment extends Fragment implements AbsListView.OnItemClickL
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        Main2Activity activity = (Main2Activity) getActivity();
-        //activity.getToolbarRef().setBackgroundColor(getResources().getColor(R.color.play_blue));
+        MainActivity activity = (MainActivity) getActivity();
+        activity.getToolbarRef().setBackgroundColor(getResources().getColor(R.color.play_blue));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = activity.getWindow();
