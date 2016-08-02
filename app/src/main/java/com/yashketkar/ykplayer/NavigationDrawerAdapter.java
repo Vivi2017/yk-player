@@ -32,7 +32,7 @@ public class NavigationDrawerAdapter extends ArrayAdapter<String> {
         TextView textView = (TextView) rowView.findViewById(R.id.drawer_item_title);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.drawer_item_icon);
         textView.setText(values[position]);
-        navDrawerIcons = context.getResources().obtainTypedArray(R.array.nav_drawer_icons);
+        //navDrawerIcons = context.getResources().obtainTypedArray(R.array.nav_drawer_icons);
         imageView.setImageResource(navDrawerIcons.getResourceId(position, -1));
         return rowView;
     }

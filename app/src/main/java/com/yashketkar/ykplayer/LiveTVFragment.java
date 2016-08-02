@@ -2,6 +2,7 @@ package com.yashketkar.ykplayer;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -179,8 +180,8 @@ public class LiveTVFragment extends Fragment implements AbsListView.OnItemClickL
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        MainActivity activity = (MainActivity) getActivity();
-        activity.getToolbarRef().setBackgroundColor(getResources().getColor(R.color.play_red));
+        Main2Activity activity = (Main2Activity) getActivity();
+        //activity.getToolbarRef().setBackgroundColor(getResources().getColor(R.color.play_red));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = activity.getWindow();
@@ -206,13 +207,12 @@ public class LiveTVFragment extends Fragment implements AbsListView.OnItemClickL
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-            mListener.onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
     }
@@ -222,7 +222,6 @@ public class LiveTVFragment extends Fragment implements AbsListView.OnItemClickL
         super.onDetach();
         mListener = null;
     }
-
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
