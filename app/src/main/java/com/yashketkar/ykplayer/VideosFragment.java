@@ -19,10 +19,6 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
-
-
 /**
  * A fragment representing a list of Items.
  * <p/>
@@ -67,31 +63,11 @@ public class VideosFragment extends Fragment implements AbsListView.OnItemClickL
         String[] projection = {MediaStore.Video.VideoColumns.DISPLAY_NAME, MediaStore.Video.VideoColumns.DATA, MediaStore.Video.VideoColumns._ID};
         Cursor c = getActivity().getContentResolver().query(uri, projection, null, null, null);
         mAdapter = new VideosAdapter(getActivity(), c, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
-
-        // Get tracker.
-        Tracker t = ((AppController) getActivity().getApplication()).getTracker(
-                AppController.TrackerName.APP_TRACKER);
-        // Set screen name.
-        t.setScreenName(getString(R.string.videos_screen));
-        // Send a screen view.
-        t.send(new HitBuilders.AppViewBuilder().build());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        MainActivity activity = (MainActivity) getActivity();
-        activity.getToolbarRef().setBackgroundColor(getResources().getColor(R.color.play_blue));
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = activity.getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(activity.getResources().getColor(R.color.play_blue_dark));
-            getActivity().setTaskDescription(new ActivityManager.TaskDescription(null, null, activity.getResources().getColor(R.color.play_blue)));
-        }
-
         View view = inflater.inflate(R.layout.fragment_videos, container, false);
         // Set the adapter
         mListView = (AbsListView) view.findViewById(android.R.id.list);

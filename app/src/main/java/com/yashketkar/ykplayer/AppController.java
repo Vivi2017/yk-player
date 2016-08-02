@@ -38,19 +38,6 @@ public class AppController extends Application {
         APP_TRACKER, // Tracker used only in this app.
     }
 
-    synchronized Tracker getTracker(TrackerName trackerId) {
-        if (!mTrackers.containsKey(trackerId)) {
-
-            GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
-            Tracker t = analytics.newTracker(getString(R.string.app_tracking_id));
-            t.enableAdvertisingIdCollection(true);
-            t.enableAutoActivityTracking(true);
-            mTrackers.put(trackerId, t);
-
-        }
-        return mTrackers.get(trackerId);
-    }
-
     @Override
     public void onCreate() {
         try {

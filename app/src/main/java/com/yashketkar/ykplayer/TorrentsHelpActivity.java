@@ -1,6 +1,5 @@
 package com.yashketkar.ykplayer;
 
-import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,15 +12,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.view.WindowManager;
-
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 
 /**
  * Created by Yash on 1/11/2015.
@@ -53,28 +46,6 @@ public class TorrentsHelpActivity extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_torrentshelp);
-
-        // Get tracker.
-        Tracker t = ((AppController) TorrentsHelpActivity.this.getApplication()).getTracker(
-                AppController.TrackerName.APP_TRACKER);
-        // Set screen name.
-        t.setScreenName(getString(R.string.torrents_help_screen));
-        // Send a screen view.
-        t.send(new HitBuilders.AppViewBuilder().build());
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = this.getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(this.getResources().getColor(R.color.play_green_dark));
-            this.setTaskDescription(new ActivityManager.TaskDescription(null/*activity.getmTitle().toString()*/, null, this.getResources().getColor(R.color.play_green)));
-        }
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_bottom);
-        toolbar.setTitle(getString(R.string.torrents_help_toolbar));
-        toolbar.setBackgroundColor(getResources().getColor(R.color.play_green));
-        setSupportActionBar(toolbar);
-
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager) findViewById(R.id.pager);
         mPagerAdapter = new TorrentsHelpPagerAdapter(getSupportFragmentManager());

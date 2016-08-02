@@ -11,12 +11,9 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NotificationCompat;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -31,8 +28,6 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,9 +40,9 @@ public class MainActivity extends AppCompatActivity
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
+    private CharSequence mTitle;
     private Toolbar mToolbar;
 
-    private CharSequence mTitle;
     private String versioncode;
     private String valert_title;
     private String valert_message;
@@ -75,6 +70,7 @@ public class MainActivity extends AppCompatActivity
 
         switchfragments(VideosFragment.newInstance());
         navigationView.setCheckedItem(R.id.nav_videos);
+        getSupportActionBar().setTitle("Videos");
     }
 
     @Override
@@ -109,7 +105,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -119,6 +114,8 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_videos:
                 fragment = new VideosFragment().newInstance();
                 switchfragments(fragment);
+                mTitle="Videos";
+                restoreActionBar();
                 break;
             case R.id.nav_network_stream:
                 AlertDialog.Builder nwalert = new AlertDialog.Builder(this);
@@ -159,10 +156,14 @@ public class MainActivity extends AppCompatActivity
                             TorrentsHelpActivity.class);
                     startActivity(intent);
                 }
+                mTitle="Torrent Stream";
+                restoreActionBar();
                 break;
             case R.id.nav_live_tv:
                 fragment = new LiveTVFragment().newInstance();
                 switchfragments(fragment);
+                mTitle="Live TV";
+                restoreActionBar();
                 break;
             case R.id.nav_share:
                 Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
@@ -172,7 +173,11 @@ public class MainActivity extends AppCompatActivity
                 startActivity(Intent.createChooser(shareIntent, getString(R.string.share_chooser)));
                 break;
             case R.id.nav_website:
-
+                Uri webpage = Uri.parse(getString(R.string.website_link));
+                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
             default:
                 break;
         }
@@ -201,12 +206,7 @@ public class MainActivity extends AppCompatActivity
         mToolbar.setTitle(mTitle);
     }
 
-    public Toolbar getToolbarRef() {
-        return mToolbar;
-    }
-
     public void playvideo(String id) {
-        //displayInterstitial();
         Intent intent = new Intent(MainActivity.this,
                 VideoPlayerActivity.class);
         intent.putExtra("EXTRA_URL", id);
