@@ -80,5 +80,6 @@
         <item>@drawable/torrents_help_6</item>
         <item>@drawable/torrents_help_7</item>
     </array>
+    <string name="title_activity_main2">Main2Activity</string>
 
 </resources>

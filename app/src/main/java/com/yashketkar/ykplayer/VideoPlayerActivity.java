@@ -13,7 +13,7 @@ import android.view.View;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
-import io.vov.vitamio.LibsChecker;
+//import io.vov.vitamio.LibsChecker;
 import io.vov.vitamio.MediaPlayer;
 import io.vov.vitamio.widget.MediaController;
 import io.vov.vitamio.widget.VideoView;
@@ -37,8 +37,8 @@ public class VideoPlayerActivity extends ActionBarActivity {
         // Send a screen view.
         t.send(new HitBuilders.AppViewBuilder().build());
 
-        if (!LibsChecker.checkVitamioLibs(this))
-            return;
+//        if (!LibsChecker.checkVitamioLibs(this))
+//            return;
 
         hideUI();
 
