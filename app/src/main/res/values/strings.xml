@@ -44,6 +44,7 @@
 
     <string name="app_name" translatable="false">YK Player</string>
     <string name="title_activity_main" translatable="false">Main Activity</string>
+    <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_video_player" translatable="false">Video Player Activity</string>
     <string name="title_activity_torrents_help" translatable="false">Torrents Help Activity</string>
     <string name="share_message" translatable="false">http://tiny.cc/YKPlayerPro</string>
@@ -61,16 +62,6 @@
     <string name="video_player_screen" translatable="false">VideoPlayerScreen</string>
     <string name="torrents_help_screen" translatable="false">TorrentsHelpScreen</string>
 
-    <!-- Nav Drawer List Item Icons -->
-    <!-- Keep them in order as the titles are in -->
-    <array name="nav_drawer_icons">
-        <item>@drawable/ic_video_collection_grey600_48dp</item>
-        <item>@drawable/ic_cloud_grey600_48dp</item>
-        <item>@drawable/ic_torrent_grey600_48dp</item>
-        <item>@drawable/ic_tv_grey600_48dp</item>
-        <item>@drawable/ic_share_grey600_48dp</item>
-    </array>
-
     <array name="torrents_help_icons">
         <item>@drawable/torrents_help_1</item>
         <item>@drawable/torrents_help_2</item>
@@ -80,6 +71,4 @@
         <item>@drawable/torrents_help_6</item>
         <item>@drawable/torrents_help_7</item>
     </array>
-    <string name="title_activity_main2">Main2Activity</string>
-
 </resources>
