@@ -4,19 +4,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_videos"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_menu_videos"
             android:title="Videos" />
         <item
             android:id="@+id/nav_network_stream"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_menu_network"
             android:title="Network Stream" />
         <item
             android:id="@+id/nav_torrent_stream"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_menu_torrent"
             android:title="Torrent Stream" />
         <item
             android:id="@+id/nav_live_tv"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_menu_tv"
             android:title="Live TV" />
     </group>
 
@@ -28,7 +28,7 @@
                 android:title="Share" />
             <item
                 android:id="@+id/nav_website"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_menu_browser"
                 android:title="Visit Website" />
         </menu>
     </item>
