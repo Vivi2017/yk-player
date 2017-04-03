@@ -1,0 +1,295 @@
+[
+	{
+		"title": "AM Sports (Argentina)",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_amsports.jpg",
+		"play": "http://iphone-streaming.ustream.tv/uhls/11602466/streams/live/iphone/playlist.m3u8"
+	},
+	{
+		"title": "Zing",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_zing.png",
+		"play": "http://46.249.213.87/iPhone/broadcast/zing-tablet.3gp/zing-tablet.3gp-mr648k.m3u8?trackingid=3171370000&os=desktop"
+	},
+	{
+		"title": "Times Now",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_timesnow.jpeg",
+		"play": "http://ongoingevents-f.akamaihd.net/timesnow_1_1@174555?v=2.4.5&fp=WIN%2013,0,0,214&r=MVGEE&g=GZOPDXHVCAAI"
+	},
+	{
+		"title": "Sab TV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_sabtv.png",
+		"play": "http://46.249.213.93/iPhone/broadcast/sonysabtv-tablet.3gp/sonysabtv-tablet.3gp-mr498k.m3u8?trackingid=4271710000&os=desktop"
+	},
+	{
+		"title": "Movies OK",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_moviesok.jpg",
+		"play": "http://46.249.213.87/iPhone/broadcast/bollywoodmovies-tablet.3gp.m3u8?trackingid=3310010000&amp;os=desktop"
+	},
+	{
+		"title": "Zee Premier",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_zeepremier.png",
+		"play": "http://yupptvrtmp-lh.akamaihd.net/i/nwk5_zeepremier@180466/master.m3u8"
+	},
+	{
+		"title": "Zee Action",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_zeeaction.png",
+		"play": "http://yupptvrtmp-lh.akamaihd.net/i/nwk5_zeeaction@180466/master.m3u8"
+	},
+	{
+		"title": "Sakshi TV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_sakshitv.jpg",
+		"play": "http://ndtv.live.cdn.bitgravity.com/ndtv/live/saakshi512"
+	},
+	{
+		"title": "ABP News (Hindi)",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_abpnews.jpg",
+		"play": "http://hindiabp-lh.akamaihd.net/i/hindiabp1new_1@192103/master.m3u8"
+	},	{
+		"title": "NDTV 24x7",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_ndtv247.gif",
+		"play": "http://ndtv.indostan.epac.to/ndtv/247lo/live/native"
+	},
+	{
+		"title": "NDTV 24x7 2",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_ndtv247.gif",
+		"play": "http://ndtv.live-s.cdn.bitgravity.com/cdn-live-b7/_definst_/ndtv/live/ndtv247live.smil/playlist.m3u8"
+	},	{
+		"title": "NDTV GoodTimes",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_ndtvgoodtimes.png",
+		"play": "http://bglive-a.bitgravity.com/ndtv/prohi/live/native"
+	},
+	{
+		"title": "NDTV India (Hindi)",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_ndtvindia.png",
+		"play": "http://ndtv.indostan.epac.to/ndtv/indlo/live/native"
+	},
+	{
+		"title": "NDTV India (Hindi) 2",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_ndtvindia.png",
+		"play": "http://bglive-a.bitgravity.com/ndtv/indlo/live/native"
+	},	{
+		"title": "NDTV Prime",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_ndtvprime.png",
+		"play": "http://bglive-a.bitgravity.com/ndtv/prolo/live/native"
+	},
+	{
+		"title": "Bloomberg India",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_bloombergin.jpeg",
+		"play": "rtsp://bloomtv.live-s.cdn.bitgravity.com/cdn-live/_definst_/bloomtv/live/feed01?nc=1"
+	},
+	{
+		"title": "Bloomberg USA",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_bloombergusa.jpg",
+		"play": "http://btv-i.akamaihd.net/hls/live/202760/btvusa_ios/P1/M240.m3u8"
+	},
+	{
+		"title": "DD News",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_ddnational.jpg",
+		"play": "http://164.100.49.24:8080/hls-live/livepkgr/_definst_/ddnewslive.m3u8"
+	},
+	{
+		"title": "Loksabha TV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_loksabha.jpg",
+		"play": "http://164.100.49.24:8080/hls-live/livepkgr/_definst_/lstvlive.m3u8"
+	},
+	{
+		"title": "Al Jazeera",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_aljazeera.jpg",
+		"play": "http://vizrthlsaje-i.akamaihd.net/hls/live/206524/AJEnglish/2873287_iOS/master.m3u8"
+	},
+	{
+		"title": "Twit",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_twit.jpg",
+		"play": "http://iphone-streaming.ustream.tv/ustreamVideo/1524/streams/live/playlist.m3u8"
+	},
+	{
+		"title": "NASA TV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_nasa.png",
+		"play": "http://www.nasa.gov/multimedia/nasatv/NTV-Public-IPS.m3u8"
+	},
+	{
+		"title": "Trace Sports",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_tracesports.png",
+		"play": "http://46.249.213.87/iPhone/broadcast/tracetvsports-tablet.3gp.m3u8"
+	},
+	{
+		"title": "Trace Urban",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_traceurban.jpg",
+		"play": "http://46.249.213.87/iPhone/broadcast/tracetvurban-tablet.3gp.m3u8"
+	},
+	{
+		"title": "Clubbing TV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_clubbingtv.jpg",
+		"play": "http://46.249.213.87/iPhone/broadcast/clubbingtv-tablet.3gp.m3u8"
+	},
+	{
+		"title": "BritAsia TV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_britasia.gif",
+		"play": "http://46.249.213.87/iPhone/broadcast/britasia-tablet.3gp.m3u8"
+	},
+	{
+		"title": "Ibiza TV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_ibiza.jpg",
+		"play": "http://46.249.213.87/iPhone/broadcast/ibizaontv-tablet.3gp.m3u8"
+	},
+	{
+		"title": "Automotive TV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_automotivetv.png",
+		"play": "http://46.249.213.87/iPhone/broadcast/automotivetv-tablet.3gp.m3u8"
+	},
+	{
+		"title": "Green TV Comedy",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_greentv.jpg",
+		"play": "http://46.249.213.87/iPhone/broadcast/comedy-tablet.3gp.m3u8"
+	},
+	{
+		"title": "Rouge TV (French)",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_rougetv.jpg",
+		"play": "http://rtmp.infomaniak.ch/livecast/rougetv/playlist.m3u8"
+	},	{
+		"title": "Outdoor Channel",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_outdoor.jpg",
+		"play": "rtmp://lm02.everyon.tv:1935/ptv2/pld613"
+	},
+	{
+		"title": "Capital TV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_capitaltv.png",
+		"play": "http://cdn-sov-2.musicradio.com/LiveVideo/Capital/playlist.m3u8"
+	},
+	{
+		"title": "Vevo 1",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_vevo.jpg",
+		"play": "http://vevoplaylist-live.hls.adaptive.level3.net/vevo/ch1/06/prog_index.m3u8"
+	},
+	{
+		"title": "Vevo 2",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_vevo.jpg",
+		"play": "http://vevoplaylist-live.hls.adaptive.level3.net/vevo/ch2/06/prog_index.m3u8"
+	},
+	{
+		"title": "Vevo 3",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_vevo.jpg",
+		"play": "http://vevoplaylist-live.hls.adaptive.level3.net/vevo/ch3/06/prog_index.m3u8"
+	},
+	{
+		"title": "DeeJay TV (Italian)",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_deejay.png",
+		"play": "http://flv.kataweb.it/hls/deejaytv/deejaytv.m3u8"
+	},
+	{
+		"title": "Sky TG24 (Italian)",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_skytg24.jpeg",
+		"play": "http://iphone.live.sky.it/jen2011/jen2011_Layer1.m3u8"
+	},
+	{
+		"title": "Alhurra TV (Arabic)",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_alhurra.jpg",
+		"play": "rtmp://cp51007.live.edgefcs.net/live/Alhurra_Flash@15"
+	},
+	{
+		"title": "City of Boston TV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_boston.png",
+		"play": "rtmp://streaming.cityofboston.gov/live/cable"
+	},
+	{
+		"title": "HSNTV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_hsn.jpg",
+		"play": "rtsp://hsn.mpl.miisolutions.net:1935/hsn-live01/_definst_/mp4:420p500kB31"
+	},	{
+		"title": "News 12 Long Island",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_news12li.jpg",
+		"play": "rtmp://fs-b4e3010000000000.id.cdn.cv.net/vxedge/fs-b4e3010000000000/fs-b4e3010000000000"
+	},
+	{
+		"title": "News 12 Bronx",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_news12bronx.png",
+		"play": "rtmp://fs-b5e3010000000000.id.cdn.cv.net/vxedge/fs-b5e3010000000000/fs-b5e3010000000000"
+	},
+	{
+		"title": "News 12 Bronx Weather",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_news12bronx.png",
+		"play": "rtmp://fs-afe3010000000000.id.cdn.cv.net/vxedge/fs-afe3010000000000/fs-afe3010000000000"
+	},
+	{
+		"title": "News 12 Brooklyn",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_news12brooklyn.png",
+		"play": "rtmp://fs-ace3010000000000.id.cdn.cv.net/vxedge/fs-ace3010000000000/fs-ace3010000000000"
+	},
+	{
+		"title": "News 12 Brooklyn Weather",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_news12brooklyn.png",
+		"play": "rtmp://fs-afe3010000000000.id.cdn.cv.net/vxedge/fs-afe3010000000000/fs-afe3010000000000"
+	},
+	{
+		"title": "News 12 Connecticut Weather",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_news12conneticut.jpg",
+		"play": "rtmp://fs-b6e3010000000000.id.cdn.cv.net/vxedge/fs-b6e3010000000000/fs-b6e3010000000000"
+	},
+	{
+		"title": "News 12 Hudson Valley Weather",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_news12hsv.jpg",
+		"play": "rtmp://fs-b8e3010000000000.id.cdn.cv.net/vxedge/fs-b8e3010000000000/fs-b8e3010000000000"
+	},
+	{
+		"title": "CBN TV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_cbnnews.jpg",
+		"play": "mmsh://live1.cbn.org/iptv1"
+	},
+	{
+		"title": "Florida Coral Gables TV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_coralgables.jpg",
+		"play": "mms://207.7.154.95/G0937_002?wmcache=0"
+	},
+	{
+		"title": "Heart TV",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_heart.png",
+		"play": "rtmp://cdn-sov-2.musicradio.com:80/LiveVideo/Heart"
+	},
+	{
+		"title": "Pentagon Channel",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_pentagon.jpg",
+		"play": "rtmp://cp114761.live.edgefcs.net:443/live/tpc-live_1@44263"
+	},
+	{
+		"title": "Bursa Sport",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_bstv.jpg",
+		"play": "http://stream.yayindayiz.biz/Bursaspor/bursaspor/playlist.m3u8"
+	},	{
+		"title": "ABP Majha (Marathi)",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_abpmajha.jpg",
+		"play": "http://mediacontent-lh.akamaihd.net/i/marathiabpnew_1@188093/master.m3u8"
+	},	{
+		"title": "IBN 7",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_ibn7.jpg",
+		"play": "http://ibn7_hls-lh.akamaihd.net/i/ibn7_hls_n_1@174951/index_3_av-b.m3u8?sd=10&rebase=on"
+	},
+	{
+		"title": "CNN IBN",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_cnnibn.png",
+		"play": "http://cnn_ibn_hls-lh.akamaihd.net/i/cnn_ibn_hls_n_1@174950/index_1_av-p.m3u8?sd=10&rebase=on"
+	},
+	{
+		"title": "IBN Lokmat (Marathi)",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_ibnlokmat.gif",
+		"play": "http://ibn_lokmat_hls-lh.akamaihd.net/i/ibn_lokmat_hls_n_1@178974/index_1_av-p.m3u8?sd=10&rebase=on"
+	},
+	{
+		"title": "ISKCON Vrindavan",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_iskcon.png",
+		"play": "http://cdn.eswebcast.com:1935/iscon/iscon_160p/playlist.m3u8"
+	},
+	{
+		"title": "CNBC Bazaar (Gujrati)",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_cnbcbazaar.jpg",
+		"play": "http://cnbc_gujrati_hls-lh.akamaihd.net/i/cnbc_gujrati_hls_n_1@178933/index_1_av-p.m3u8?sd=10&rebase=on"
+	},
+	{
+		"title": "1TV Georgia",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_1tvge.jpg",
+		"play": "http://208.75.229.59:1935/1tv/smil:1tvmulti.smil/playlist.m3u8"
+	},
+	{
+		"title": "Sky News",
+		"image": "http://heroic-command-719.appspot.com/thumbs/ic_skynews.jpg",
+		"play": "mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k"
+	},
+]
